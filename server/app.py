@@ -9,4 +9,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+from server.models import restaurant, pizza, restaurant_pizza
 from server.controllers import restaurant_controller, pizza_controller, restaurant_pizza_controller
+
+if __name__ == '__main__':
+    app.run(port=8050)
